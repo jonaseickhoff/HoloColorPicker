@@ -1,12 +1,12 @@
-buildscript {
-    repositories {
-        mavenCentral()
-    }
-
-    dependencies {
-        classpath 'com.android.tools.build:gradle:0.7.+'
-    }
-}
+//buildscript {
+//    repositories {
+//        mavenCentral()
+//    }
+//
+//    dependencies {
+//        classpath 'com.android.tools.build:gradle:0.7.+'
+//    }
+//}
 
 def isReleaseBuild() {
     return version.contains("SNAPSHOT") == false
@@ -23,8 +23,8 @@ allprojects {
 
 apply plugin: 'android-library'
 android {
-	compileSdkVersion 16
-	buildToolsVersion "18.1.1"
+	compileSdkVersion 21
+	buildToolsVersion "21.1.2"
 
     sourceSets {
         main {
@@ -36,4 +36,4 @@ android {
 }
 
 
-apply from: 'maven_push.gradle'
+//apply from: 'maven_push.gradle'
