@@ -501,6 +501,20 @@ public class ValueBar extends View {
 		    				    (float) (1 - (mPosToSatFactor * coord)) });
     }
 
+    /**
+     * Set whether the bar should be horizontal or vertical
+     *
+     * @param horizontal true if the bar should be horizontal, false for vertical
+     */
+    public void setOrientation(boolean horizontal) {
+        mOrientation = horizontal;
+        invalidate();
+    }
+
+    public boolean getOrientation() {
+        return mOrientation;
+    }
+
 	/**
 	 * Get the currently selected color.
 	 * 
