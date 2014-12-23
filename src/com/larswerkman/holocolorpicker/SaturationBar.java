@@ -392,7 +392,8 @@ public class SaturationBar extends View {
 					mBarPointerPaint.setColor(mColor);
 					if (mPicker != null) {
 						mPicker.setNewCenterColor(mColor);
-						mPicker.changeValueBarColor(mColor);
+                        mPicker.ColorChangedEvent();
+                        mPicker.changeValueBarColor(mColor);
 						mPicker.changeOpacityBarColor(mColor);
 					}
 					invalidate();
@@ -402,7 +403,8 @@ public class SaturationBar extends View {
 					mBarPointerPaint.setColor(mColor);
 					if (mPicker != null) {
 						mPicker.setNewCenterColor(mColor);
-						mPicker.changeValueBarColor(mColor);
+                        mPicker.ColorChangedEvent();
+                        mPicker.changeValueBarColor(mColor);
 						mPicker.changeOpacityBarColor(mColor);
 					}
 					invalidate();
@@ -412,7 +414,8 @@ public class SaturationBar extends View {
 					mBarPointerPaint.setColor(mColor);
 					if (mPicker != null) {
 						mPicker.setNewCenterColor(mColor);
-						mPicker.changeValueBarColor(mColor);
+                        mPicker.ColorChangedEvent();
+                        mPicker.changeValueBarColor(mColor);
 						mPicker.changeOpacityBarColor(mColor);
 					}
 					invalidate();
@@ -426,7 +429,8 @@ public class SaturationBar extends View {
 		case MotionEvent.ACTION_UP:
 			mIsMovingPointer = false;
 			
-			if(onSaturationSelectedListener != null && oldSelectedListenerSaturation != mColor)
+		//	if(onSaturationSelectedListener != null && oldSelectedListenerSaturation != mColor)
+            if(onSaturationSelectedListener != null)
 			{
 				onSaturationSelectedListener.OnStaturationSelected(mColor);
 				oldSelectedListenerSaturation = mColor;
@@ -466,7 +470,8 @@ public class SaturationBar extends View {
 		mBarPointerPaint.setColor(mColor);
 		if (mPicker != null) {
 			mPicker.setNewCenterColor(mColor);
-			if(mPicker.hasValueBar())
+            mPicker.ColorChangedEvent();
+            if(mPicker.hasValueBar())
 				mPicker.changeValueBarColor(mColor);
 			else if(mPicker.hasOpacityBar())
 				mPicker.changeOpacityBarColor(mColor);
@@ -487,7 +492,8 @@ public class SaturationBar extends View {
 		mBarPointerPaint.setColor(mColor);
 		if (mPicker != null) {
 			mPicker.setNewCenterColor(mColor);
-			mPicker.changeValueBarColor(mColor);
+            mPicker.ColorChangedEvent();
+            mPicker.changeValueBarColor(mColor);
 			mPicker.changeOpacityBarColor(mColor);
 		}
 		invalidate();
